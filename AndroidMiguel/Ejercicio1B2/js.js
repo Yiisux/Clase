@@ -10,6 +10,7 @@ function calcularMedia(){
   nota3 = parseInt(nota3,10);
 
   var total = nota1 + nota2 + nota3;
+  total = parseInt(total, 10);
   if(total >= 5){
     alert("Aprobado");
   }else {

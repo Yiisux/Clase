@@ -29,22 +29,23 @@
 	<div class="container-fluid" id="wrapper">
 		<div class="row">
 			<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2 bg-faded sidebar-style-1">
-				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em> MecAround</a></h1>
+				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em> Mecaround</a></h1>
 
 				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
 
 				<ul class="nav nav-pills flex-column sidebar-nav">
-					<li class="nav-item"><a class="nav-link active" href="index.html"><em class="fa fa-dashboard"></em> Dar de alta una ncidencia <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html"><em class="fa fa-dashboard"></em> Dar de alta una ncidencia <span class="sr-only">(current)</span></a></li>
 					<li class="nav-item"><a class="nav-link" href="historial.html"><em class="fa fa-calendar-o"></em> Incidencias activas</a></li>
-					<li class="nav-item"><a class="nav-link" href="respuestas.html"><em class="fa fa-clone"></em> Respuestas</a></li>
+					<li class="nav-item"><a class="nav-link active" href="#"><em class="fa fa-clone"></em> Respuestas</a></li>
 				</ul>
+
 
 				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Salir</a></nav>
 
 			<main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
 				<header class="page-header row justify-center">
 					<div class="col-md-6 col-lg-8" >
-						<h1 class="float-left text-center text-md-left">Dar de alta una incidencia</h1>
+						<h1 class="float-left text-center text-md-left">Respuestas a mis incidencias</h1>
 					</div>
 
 					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,72 +67,57 @@
 				</header>
 
 				<section class="row">
-					<div class="col-md-12">
+					<div class="col-sm-12">
 						<section class="row">
-							<div class="col-md-12 col-lg-4">
-								<div class="card-block">
-									<h3 class="card-title">Nueva incidencia</h3>
-
-
-									<h5 class="card-subtitle mb-2 text-muted">Datos personales</h5>
-
-									<form class="form-horizontal" action="" method="post">
-										<fieldset>
-											<!-- Name input-->
-											<div class="form-group">
-												<label class="col-12 control-label no-padding" for="name">Nombre</label>
-
-												<div class="col-12 no-padding">
-													<input id="name" name="name" type="text" placeholder="Tu nombre completo" class="form-control">
-												</div>
-											</div>
-
-											<!-- Email input-->
-											<div class="form-group">
-												<label class="col-12 control-label no-padding" for="email">E-mail</label>
-
-												<div class="col-12 no-padding">
-													<input id="email" name="email" type="text" placeholder="Tu email" class="form-control">
-												</div>
-											</div>
-											<!-- Descripcion de la averia -->
-											<br><h5 class="card-subtitle mb-2 text-muted">Información sobre la avería</h5>
-											 <label class="col-12 control-label" for="Tipo de averia">Tipo de averia</label>
-											<select id="Tipo de averia" name="Tipo de averia" class="form-control">
-												<option value="1">Motor</option>
-												<option value="2">Chasis</option>
-												<option value="3">Ruedas</option>
-												<option value="4">Frenos</option>
-												<option value="5">Interior</option>
-												<option value="6">Luces</option>
-												<option value="7">Otro tipo</option>
-											</select>
-
-											<br>
-											 <label class="col-12 control-label" for="Tipo de averia">Matrícula</label>
-											 <input id="matricula" name="matricula" type="text" placeholder="Matrícula del coche" class="form-control">
-											 <br>
-											<!-- Message body -->
-											<div class="form-group">
-												<label class="col-12 control-label no-padding" for="message">Descripción de la avería</label>
-
-												<div class="col-12 no-padding">
-													<textarea class="form-control" id="message" name="message" placeholder="Escribe aquí la descripción" rows="5"></textarea>
-												</div>
-											</div>
-
-											<!-- Form actions -->
-											<div class="form-group">
-												<div class="col-12 widget-right no-padding">
-													<button type="submit" class="btn btn-primary btn-md float-left">Enviar</button>
-												</div>
-											</div>
-										</fieldset>
-									</form>
-								</div>
-
+							<div class="col-12">
+								<h3 class="mb-4">Respuestas de mecánicos</h3>
 							</div>
+
+							<div class="col-lg-4 mb-4">
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #9</div></a>
+
+									<div class="card-block">
+										<p>Te ofrezco una reparación rápida y a un precio muy razonable</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 mb-4">
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #22</div></a>
+
+									<div class="card-block">
+										<p>Puedo arreglarlo en una tarde sin problema y al mejor precio.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 mb-4">
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #33</div></a>
+
+									<div class="card-block">
+										<p>Soy especialista en este tipo de averias.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 mb-4">
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #6</div></a>
+
+									<div class="card-block">
+										<p>No hay nadie mejor que yo para esta avería.</p>
+									</div>
+								</div>
+							</div>
+
+
 						</section>
+
+
+
 					</div>
 				</section>
 			</main>
@@ -150,17 +136,6 @@
     <script src="js/easypiechart-data.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-	    window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-};
-	</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
