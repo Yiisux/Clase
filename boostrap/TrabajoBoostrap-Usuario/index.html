@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta name="description" content="">
+
+	<meta name="author" content="">
+
+	<link rel="icon" href="images/favicon.ico">
+
+	<title>Medialoot Bootstrap 4 Dashboard Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid" id="wrapper">
+		<div class="row">
+			<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2 bg-faded sidebar-style-1">
+				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em> MecAround</a></h1>
+
+				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
+
+				<ul class="nav nav-pills flex-column sidebar-nav">
+					<li class="nav-item"><a class="nav-link active" href="index.html"><em class="fa fa-dashboard"></em> Dar de alta una ncidencia <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="widgets.html"><em class="fa fa-calendar-o"></em> Historial de incidencias</a></li>
+					<li class="nav-item"><a class="nav-link" href="cards.html"><em class="fa fa-clone"></em> Respuestas</a></li>
+				</ul>
+
+				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Salir</a></nav>
+
+			<main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
+				<header class="page-header row justify-center">
+					<div class="col-md-6 col-lg-8" >
+						<h1 class="float-left text-center text-md-left">Dar de alta una incidencia</h1>
+					</div>
+
+					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="images/profile-pic.jpg" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
+
+						<div class="username mt-1">
+							<h4 class="mb-1">Alicia</h4>
+
+							<h6 class="text-muted">Usuario</h6>
+						</div>
+						</a>
+
+						<div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#"><em class="fa fa-user-circle mr-1"></em> View Profile</a>
+						     <a class="dropdown-item" href="#"><em class="fa fa-sliders mr-1"></em> Preferencias</a>
+						     <a class="dropdown-item" href="#"><em class="fa fa-power-off mr-1"></em> Cerrar sesión</a></div>
+					</div>
+
+					<div class="clear"></div>
+				</header>
+
+				<section class="row">
+					<div class="col-md-12">
+						<section class="row">
+							<div class="col-md-12 col-lg-4">
+								<div class="card-block">
+									<h3 class="card-title">Nueva incidencia</h3>
+
+
+									<h5 class="card-subtitle mb-2 text-muted">Datos personales</h5>
+
+									<form class="form-horizontal" action="" method="post">
+										<fieldset>
+											<!-- Name input-->
+											<div class="form-group">
+												<label class="col-12 control-label no-padding" for="name">Nombre</label>
+
+												<div class="col-12 no-padding">
+													<input id="name" name="name" type="text" placeholder="Tu nombre completo" class="form-control">
+												</div>
+											</div>
+
+											<!-- Email input-->
+											<div class="form-group">
+												<label class="col-12 control-label no-padding" for="email">E-mail</label>
+
+												<div class="col-12 no-padding">
+													<input id="email" name="email" type="text" placeholder="Tu email" class="form-control">
+												</div>
+											</div>
+											<!-- Descripcion de la averia -->
+											<br><h5 class="card-subtitle mb-2 text-muted">Información sobre la avería</h5>
+											 <label class="col-12 control-label" for="Tipo de averia">Tipo de averia</label>
+											<select id="Tipo de averia" name="Tipo de averia" class="form-control">
+												<option value="1">Motor</option>
+												<option value="2">Chasis</option>
+												<option value="3">Ruedas</option>
+												<option value="4">Frenos</option>
+												<option value="5">Interior</option>
+												<option value="6">Luces</option>
+												<option value="7">Otro tipo</option>
+											</select>
+
+											<br>
+											 <label class="col-12 control-label" for="Tipo de averia">Matrícula</label>
+											 <input id="matricula" name="matricula" type="text" placeholder="Matrícula del coche" class="form-control">
+											 <br>
+											<!-- Message body -->
+											<div class="form-group">
+												<label class="col-12 control-label no-padding" for="message">Descripción de la avería</label>
+
+												<div class="col-12 no-padding">
+													<textarea class="form-control" id="message" name="message" placeholder="Escribe aquí la descripción" rows="5"></textarea>
+												</div>
+											</div>
+
+											<!-- Form actions -->
+											<div class="form-group">
+												<div class="col-12 widget-right no-padding">
+													<button type="submit" class="btn btn-primary btn-md float-right">Enviar</button>
+												</div>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</section>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+	    window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+	});
+};
+	</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+	  </body>
+</html>
