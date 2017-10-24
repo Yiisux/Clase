@@ -29,22 +29,23 @@
 	<div class="container-fluid" id="wrapper">
 		<div class="row">
 			<nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2 bg-faded sidebar-style-1">
-				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em> MecAround</a></h1>
+				<h1 class="site-title"><a href="index.html"><em class="fa fa-rocket"></em> Mecaround</a></h1>
 
 				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
 
 				<ul class="nav nav-pills flex-column sidebar-nav">
-					<li class="nav-item"><a class="nav-link active" href="index.html"><em class="fa fa-dashboard"></em> Listado de incidencias <span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="historial.html"><em class="fa fa-calendar-o"></em> Presupuestos en espera</a></li>
-					<li class="nav-item"><a class="nav-link" href="respuestas.html"><em class="fa fa-clone"></em> Trabajos aceptados</a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html"><em class="fa fa-dashboard"></em> Dar de alta una ncidencia <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="historial.html"><em class="fa fa-calendar-o"></em> Incidencias activas</a></li>
+					<li class="nav-item"><a class="nav-link active" href="#"><em class="fa fa-clone"></em> Respuestas</a></li>
 				</ul>
+
 
 				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Salir</a></nav>
 
 			<main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
 				<header class="page-header row justify-center">
 					<div class="col-md-6 col-lg-8" >
-						<h1 class="float-left text-center text-md-left">Incidencias pendientes de respuestas</h1>
+						<h1 class="float-left text-center text-md-left">Respuestas a mis incidencias</h1>
 					</div>
 
 					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +54,7 @@
 						<div class="username mt-1">
 							<h4 class="mb-1">Alicia</h4>
 
-							<h6 class="text-muted">Mecánica</h6>
+							<h6 class="text-muted">Usuario</h6>
 						</div>
 						</a>
 
@@ -69,40 +70,41 @@
 					<div class="col-sm-12">
 						<section class="row">
 							<div class="col-12">
+								<h3 class="mb-4">Respuestas de mecánicos</h3>
 							</div>
 
 							<div class="col-lg-4 mb-4">
-								<div class="card card-inverse card-success">
-									<a href="respuesta.html"><div class="card-header">Problema con el motor</div></a>
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #9</div></a>
 
 									<div class="card-block">
-										<p>El motor hace como para arrancar pero no termina de arrancar.</p>
+										<p>Te ofrezco una reparación rápida y a un precio muy razonable</p>
 									</div>
 								</div>
 							</div>
 
 							<div class="col-lg-4 mb-4">
-								<div class="card card-inverse card-success">
-									<a href="respuesta.html"><div class="card-header">Cable de freno roto</div></a>
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #22</div></a>
 
 									<div class="card-block">
-										<p>Necesito que alguien me cambie el cable de los frenos.</p>
+										<p>Puedo arreglarlo en una tarde sin problema y al mejor precio.</p>
 									</div>
 								</div>
 							</div>
 
 							<div class="col-lg-4 mb-4">
-								<div class="card card-inverse card-success">
-									<a href="respuesta.html"><div class="card-header">Golpe en la parte frontal del coche</div></a>
+								<div class="card card-inverse card-primary">
+									<a href="respuesta.html"><div class="card-header">Incidencia con id #33</div></a>
 
 									<div class="card-block">
-										<p>Tengo un gran golpe en la parte frontal del coche y necesito arreglarlo, pintarlo y faros nuevos.</p>
+										<p>Soy especialista en este tipo de averias.</p>
 									</div>
 								</div>
 							</div>
 
 							<div class="col-lg-4 mb-4">
-								<div class="card card-inverse card-success">
+								<div class="card card-inverse card-primary">
 									<a href="respuesta.html"><div class="card-header">Incidencia con id #6</div></a>
 
 									<div class="card-block">
@@ -134,17 +136,6 @@
     <script src="js/easypiechart-data.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/custom.js"></script>
-    <script>
-	    window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-};
-	</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
