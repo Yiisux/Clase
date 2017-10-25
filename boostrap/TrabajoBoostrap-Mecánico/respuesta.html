@@ -34,9 +34,9 @@
 				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
 
 				<ul class="nav nav-pills flex-column sidebar-nav">
-					<li class="nav-item"><a class="nav-link" href="index.html"><em class="fa fa-dashboard"></em> Dar de alta una ncidencia <span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="historial.html"><em class="fa fa-calendar-o"></em> Incidencias activas</a></li>
-					<li class="nav-item"><a class="nav-link active" href="#"><em class="fa fa-clone"></em> Respuestas</a></li>
+					<li class="nav-item"><a class="nav-link active" href="index.html"><em class="fa fa-dashboard"></em> Listado de incidencias  <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="historial.html"><em class="fa fa-calendar-o"></em> Presupuestos en espera</a></li>
+
 				</ul>
 
 
@@ -54,7 +54,7 @@
 						<div class="username mt-1">
 							<h4 class="mb-1">Alicia</h4>
 
-							<h6 class="text-muted">Usuario</h6>
+							<h6 class="text-muted">Mecánica</h6>
 						</div>
 						</a>
 
@@ -68,30 +68,53 @@
 
 				<section class="row">
 					<div class="col-sm-12">
-						<h3>Manolo el mecánico</h3>
+						<h3>Alicia la mecánica</h3>
 						<div class="form-group">
   <label class="col-md-4 control-label" for="Tiempo de reparacion">Tiempo de reparación</label>
+	<div class="form-group">
   <div class="col-md-2">
-  <input id="Tiempo de reparacion" name="Tiempo de reparacion" type="text" placeholder="1 Día" class="form-control input-md" readonly="readonly" >
-
+    <select id="Tiempo de reparación" name="Tiempo de reparación" class="form-control">
+      <option value="">1 Día</option>
+      <option value="">2 Días</option>
+      <option value="">3 Días</option>
+      <option value="">4 Días</option>
+      <option value="">5 Días</option>
+      <option value="">6 Días</option>
+      <option value="">7 Días</option>
+      <option value="">8 Días</option>
+      <option value="">9 Días</option>
+      <option value="">10 Días</option>
+      <option value="">11 Días</option>
+      <option value="">12 Días</option>
+    </select>
   </div>
+</div>
+
 	<br><label class="col-md-4 control-label" for="Tiempo de reparacion">Precio</label>
 	<div class="col-md-2">
-	<input id="Tiempo de reparacion" name="Tiempo de reparacion" type="text" placeholder="85 euros" class="form-control input-md" readonly="readonly" >
+	<input id="Tiempo de reparacion" name="Tiempo de reparacion" type="text" placeholder="" class="form-control input-md"  >
 
 
 
 	</div>
-	<br><label class="col-md-4 control-label" for="Tiempo de reparacion">Direccion</label>
+
+	<br><label class="col-md-4 control-label" for="Tlf">Teléfono de contacto</label>
+	<div class="col-md-2">
+	<input id="Tiempo de reparacion" name="Tiempo de reparacion" type="text" placeholder="" class="form-control input-md"  >
+
+
+
+	</div>
+	<br><label class="col-md-4 control-label" for="Tiempo de reparacion">Direccion de mi taller</label>
 	  <div class="col-md-4">
-	  <input id="Tiempo de reparacion" name="Tiempo de reparacion" type="text" placeholder="Mairena del aljarafe - calle lepanto nº 45" class="form-control input-md" readonly="readonly" >
+	  <input id="Tiempo de reparacion" name="Tiempo de reparacion" type="text" placeholder="" class="form-control input-md" >
 
 	  </div>
 </div>
 <div class="form-group">
 <label class="col-md-4 control-label" for="Comentario">Comentario</label>
 <div class="col-md-4">
-	<textarea class="form-control" id="Comentario" name="Comentario" readonly="readonly" >Estoy muy acostumbrado a realizar este tipo de arreglos, te prometo un trabajo profesional y rápdio al mejor precio.</textarea>
+	<textarea class="form-control" id="Comentario" name="Comentario"  ></textarea>
 </div>
 </div>
 
