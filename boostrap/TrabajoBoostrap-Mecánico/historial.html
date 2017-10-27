@@ -34,9 +34,9 @@
 				<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
 
 				<ul class="nav nav-pills flex-column sidebar-nav">
-					<li class="nav-item"><a class="nav-link" href="index.html"><em class="fa fa-dashboard"></em> Dar de alta una ncidencia <span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link active" href="#"><em class="fa fa-calendar-o"></em> Incidencias activas</a></li>
-					<li class="nav-item"><a class="nav-link" href="respuestas.html"><em class="fa fa-clone"></em> Respuestas</a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html"><em class="fa fa-dashboard"></em> Listado de incidencias <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item"><a class="nav-link active" href="#"><em class="fa fa-calendar-o"></em> Presupuestos en espera</a></li>
+
 				</ul>
 
 				<a href="#" class="logout-button"><em class="fa fa-power-off"></em> Salir</a></nav>
@@ -44,7 +44,7 @@
 			<main class="col-xs-12 col-sm-8 offset-sm-4 col-lg-9 offset-lg-3 col-xl-10 offset-xl-2 pt-3 pl-4">
 				<header class="page-header row justify-center">
 					<div class="col-md-6 col-lg-8" >
-						<h1 class="float-left text-center text-md-left">Historial de incidencia activas</h1>
+						<h1 class="float-left text-center text-md-left">Historial de respuestas activas</h1>
 					</div>
 
 					<div class="dropdown user-dropdown col-md-6 col-lg-4 text-center text-md-right"><a class="btn btn-stripped dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,7 +53,7 @@
 						<div class="username mt-1">
 							<h4 class="mb-1">Alicia</h4>
 
-							<h6 class="text-muted">Usuario</h6>
+							<h6 class="text-muted">Mecánica</h6>
 						</div>
 						</a>
 
@@ -68,13 +68,13 @@
 				<section class="row">
 					<div class="col-sm-12">
 						<section class="row">
-							<div class="col-sm-12 col-md-6 ">
+							<div class="col-sm-12 col-md-8 ">
 								<div class="span7">
 <div class="widget stacked widget-table action-table">
 
 				<div class="widget-header">
 					<i class="icon-th-list"></i>
-					<h3>Averias en espera de respuestas</h3>
+					<h3>Averias a las que he respondido pero aún no tengo respuesta</h3>
 				</div> <!-- /widget-header -->
 
 				<div class="widget-content">
@@ -102,9 +102,9 @@
 							</tr>
 							<tr>
 								<td>22</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
+								<td>SE6782WWW</td>
+								<td>Faros</td>
+									 <td>Faro roto</td>
 								<td class="td-actions">
 							<a href="#" class="btn btn-sm btn-primary">Editar</a>
 							<a href="#" class="btn btn-sm btn-danger">Borrar</a>
@@ -112,9 +112,9 @@
 							</tr>
 							<tr>
 								<td>34</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
+								<td>SE23134MWN</td>
+								<td>Ruedas</td>
+									 <td>Cambio de ruedas</td>
 								<td class="td-actions">
 								<a href="#" class="btn btn-sm btn-primary">Editar</a>
 								<a href="#" class="btn btn-sm btn-danger">Borrar</a>
@@ -122,9 +122,9 @@
 							</tr>
 							<tr>
 								<td>33</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
+								<td>SE2387BYW</td>
+								<td>Chasis</td>
+									 <td>Golpe en la parte trasera</td>
 								<td class="td-actions">
 
 
@@ -136,7 +136,7 @@
 							</tr>
 							<tr>
 								<td>41</td>
-								<td>SE4565BWX</td>
+								<td>SE9897SYB</td>
 								<td>Motor</td>
 									 <td>Motor no arranca</td>
 								<td class="td-actions">
@@ -146,9 +146,9 @@
 							</tr>
 							<tr>
 								<td>52</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
+								<td>SE8797BYX</td>
+								<td>Frenos</td>
+									 <td>El coche no frena</td>
 								<td class="td-actions">
 									<a href="#" class="btn btn-sm btn-primary">Editar</a>
 									<a href="#" class="btn btn-sm btn-danger">Borrar</a>
@@ -156,6 +156,10 @@
 							</tr>
 							</tbody>
 						</table>
+						<br><br><br>
+						<div class="input-append span12">
+                    <input type="text" class="search-query mac-style" placeholder="Search">
+<a href="#" class="btn btn-sm btn-primary">Buscar matrícula</a>                </div>
 
 				</div> <!-- /widget-content -->
 
