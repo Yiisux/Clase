@@ -15,5 +15,11 @@ let xigual = document.getElementById('xigual').value
 let xmultiplicar = document.getElementById('xmultiplicar').value
 
 function escribir(n){
-	 document.getElementById('pantalla').inerHTML = n
+
+ 	document.getElementById('pantalla').innerHTML = n
+
+}
+
+function sumar(escribir(n)){
+		document.getElementById('pantalla').innerHTML = n + n
 }
