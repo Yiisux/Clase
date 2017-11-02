@@ -68,7 +68,7 @@
 				<section class="row">
 					<div class="col-sm-12">
 						<section class="row">
-							<div class="col-sm-12 col-md-6 ">
+							<div class="col-sm-12 col-md-10 ">
 								<div class="span7">
 <div class="widget stacked widget-table action-table">
 
@@ -82,82 +82,82 @@
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Matrícula</th>
-								<th>Tipo de avería</th>
+								<th>Titulo</th>
+								<th>Marca</th>
+								<th>Modelo</th>
 								<th>Descripción</th>
 								<th>Acción</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>24</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-								<td>Motor no arranca</td>
-								<td class="td-actions">
-								<a href="#" class="btn btn-sm btn-primary">Editar</a>
-								<a href="#" class="btn btn-sm btn-danger">Borrar</a>
-								</td>
-							</tr>
-							<tr>
-								<td>22</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
-								<td class="td-actions">
-							<a href="#" class="btn btn-sm btn-primary">Editar</a>
-							<a href="#" class="btn btn-sm btn-danger">Borrar</a>
-								</td>
-							</tr>
-							<tr>
-								<td>34</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
-								<td class="td-actions">
-								<a href="#" class="btn btn-sm btn-primary">Editar</a>
-								<a href="#" class="btn btn-sm btn-danger">Borrar</a>
-								</td>
-							</tr>
-							<tr>
-								<td>33</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
-								<td class="td-actions">
+						<tbody id="tablaaverias" class="borrarTabla">
 
-
-									<a href="#" class="btn btn-sm btn-primary">Editar</a>
-									<a href="#" class="btn btn-sm btn-danger">Borrar</a>
-
-
-								</td>
-							</tr>
-							<tr>
-								<td>41</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
-								<td class="td-actions">
-									<a href="#" class="btn btn-sm btn-primary">Editar</a>
-									<a href="#" class="btn btn-sm btn-danger">Borrar</a>
-								</td>
-							</tr>
-							<tr>
-								<td>52</td>
-								<td>SE4565BWX</td>
-								<td>Motor</td>
-									 <td>Motor no arranca</td>
-								<td class="td-actions">
-									<a href="#" class="btn btn-sm btn-primary">Editar</a>
-									<a href="#" class="btn btn-sm btn-danger">Borrar</a>
-								</td>
-							</tr>
 							</tbody>
 						</table>
+						<!-- Modal -->
+				<div class="modal fade" id="modalNuevaNota" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="myModalLabel">Nueva avería</h4>
+							</div>
+							<div class="modal-body">
+								<form class="form-horizontal">
+									<fieldset>
+
+									<!-- Form Name -->
+									<legend>Form Name</legend>
+
+									<!-- Text input-->
+									<div class="form-group">
+									  <label class="col-md-8 control-label" for="Titulo" id="titulo">Titulo</label>
+									  <div class="col-md-8">
+									  <input id="Titulo" name="Titulo" type="text" placeholder="" class="form-control input-md" required="">
+
+									  </div>
+									</div>
+
+									<!-- Textarea -->
+									<div class="form-group">
+									  <label class="col-md-8 control-label" for="Descripcion">Descipcion</label>
+									  <div class="col-md-8">
+									    <textarea class="form-control" id="descripcion" name="Descripcion">Describe con detalle la avería</textarea>
+									  </div>
+									</div>
+
+									<!-- Select Basic -->
+									<div class="form-group">
+									  <label class="col-md-4 control-label" for="Marca" id="marca">Marca</label>
+									  <div class="col-md-4">
+									    <select id="Marca" name="Marca" class="form-control">
+									      <option value="Ford">Ford</option>
+									      <option value="Audi">Audi</option>
+									    </select>
+									  </div>
+									</div>
+
+									<!-- Text input-->
+									<div class="form-group">
+									  <label class="col-md-8 control-label" for="Modelo" >Modelo</label>
+									  <div class="col-md-8">
+									  <input id="Modelo" name="Modelo" type="text" placeholder="" class="form-control input-md" required="">
+
+									  </div>
+									</div>
+
+									</fieldset>
+									</form>
+
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" id="btn-guardar-nota">Añadir avería</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				</div> <!-- /widget-content -->
+				<br><br><center><a href="#" class="btn btn-sm btn-success btn btn-lg" data-toggle="modal" data-target="#modalNuevaNota">Agregar</a></center>
 
 			</div> <!-- /widget -->
             </div>
@@ -186,5 +186,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
+		<script type="text/javascript" src="js/jqueryjs.js">
+
+		</script>
 	  </body>
 </html>
