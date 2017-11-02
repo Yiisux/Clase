@@ -156,6 +156,69 @@
 					</div>
 				</div>
 
+				<!-- modal editar -->
+		<div class="modal fade" id="editarNuevaNota" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">Nueva avería</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal">
+							<fieldset>
+
+							<!-- Form Name -->
+							<legend>Form Name</legend>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-8 control-label" for="Titulo" id="titulo">Titulo</label>
+								<div class="col-md-8">
+								<input id="Titulo" name="Titulo" type="text" placeholder="" class="form-control input-md" required="">
+
+								</div>
+							</div>
+
+							<!-- Textarea -->
+							<div class="form-group">
+								<label class="col-md-8 control-label" for="Descripcion">Descipcion</label>
+								<div class="col-md-8">
+									<textarea class="form-control" id="descripcion" name="Descripcion">Describe con detalle la avería</textarea>
+								</div>
+							</div>
+
+							<!-- Select Basic -->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="Marca" id="marca">Marca</label>
+								<div class="col-md-4">
+									<select id="Marca" name="Marca" class="form-control">
+										<option value="Ford">Ford</option>
+										<option value="Audi">Audi</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-8 control-label" for="Modelo" >Modelo</label>
+								<div class="col-md-8">
+								<input id="Modelo" name="Modelo" type="text" placeholder="" class="form-control input-md" required="">
+
+								</div>
+							</div>
+
+							</fieldset>
+							</form>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-primary" id="btn-guardar-nota">Añadir avería</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 				</div> <!-- /widget-content -->
 				<br><br><center><a href="#" class="btn btn-sm btn-success btn btn-lg" data-toggle="modal" data-target="#modalNuevaNota">Agregar</a></center>
 
