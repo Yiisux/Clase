@@ -63,9 +63,9 @@ while opcion != 0:
             print e
     elif opcion == 2:
         #Esta parte no me sale ya que quiero poder pasarle al método el carrito del cliente pero no se como
-        #for i in carrito:
-            #No me funciona:
-            #print carrito[i].getNombre
+        for i in carrito:
+            i.get_nombre()
+
         print "Estamos intentando solucionar el problema, lo sentimos"
 
 
