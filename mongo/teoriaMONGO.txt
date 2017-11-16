@@ -1,0 +1,32 @@
+mongo
+-------------------------------COMANDO DE INSERT----------------------------------------
+comando use: se cambia a una bd diferente y si no esta la crea (use test, se va a la bd test una vez que la crea)
+
+comando db: para saber que bd estamos utilizando en ese momento.
+
+comando db.ejemplo.insert({x:1}): hemos creado una coleccion que tiene dentro un documento con 1 solo campo(nos permite
+insertar un documento JSON linea a linea)
+
+comando db.ejemplo: nos muestra todos los comandos que podemos usar //pues no 
+
+comando db.ejemplo.find(): nos muestra todo lo insertado
+
+comando db.ejemplo.find().Pretty() : nos lo muestra en bonito
+
+comando db.ejemplo.insertOne() o insertMany(): nos permite insertar 1 o mas de 1 pero el comando insert tambien lo hace
+si creamos el JSON con [{}.{}]
+
+-----------------------------------COMANDOS DE BUSQUEDA-------------------------------------------------
+find() es = a SELECT * FROM tablaquesea
+
+comando db.ejemplo.find({edad: 21}).pretty(): saca solo los datos que tengan de edad 21
+
+comando db.ejemplo.find({edad: {$in: [32, 4]}}).pretty(): muestra las personas entre esas edades
+
+comando  db.ejemplo.find({edad : { $gt: "21"}}).pretty(): muestra las personas con edad superior a 21
+
+comando db.ejemplo.find().sort().pretty(): ordena la búsqueda pero tenemos que indicarle como queremos que lo ordene
+
+comando db.ejemplo.find().sort({edad: 1}).pretty(): ordena la búsqueda por edades de menor a mayor
+
+comando  db.ejemplo.find().sort({email : 1}).limit(4).pretty(): nos muestra el de la posicion 4 
