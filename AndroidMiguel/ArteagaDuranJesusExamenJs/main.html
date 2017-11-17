@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>REGISTRO COMPLETADO POR: <h2 id="Email"></h2> </h1>
+    No tiene noticias pendientes <br>
+    <a href="#" class="btn btn-danger"  onclick="salir();">Salir</a>
+
+    <script type="text/javascript">
+      document.getElementById('Email').innerHTML = sessionStorage.getItem("Email");
+      salir = () =>{
+        localStorage.removeItem("Email");
+        sessionStorage.removeItem("Email");
+        alert("Sesión cerrada correctamente");
+        window.location.href= "registro.html";
+
+      }
+
+    </script>
+  </body>
+</html>
