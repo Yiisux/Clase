@@ -5,99 +5,76 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-<<<<<<< HEAD
-import javax.persistence.OneToMany;
-=======
 import javax.persistence.ManyToOne;
->>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
 
 @Entity
-public class DatoMaestro {
+public class Aportacion {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_Dmaestro;
+	private long id_apotaciones;
 	
-	private String nombre;
-<<<<<<< HEAD
+	
+	private long id_DatoMaestro;
 	private double cantidad;
 	
-	@OneToMany(mappedBy="datoMaestro" , cascade = CascadeType.ALL) 
-=======
-	
-	
-	@ManyToOne
->>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Campania campania;
 	
-	public DatoMaestro() {
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Usuario usuario;
+
+	public Aportacion(){
 		
 	}
-<<<<<<< HEAD
-	
-	public DatoMaestro(String nombre, double cantidad) {
+	public Aportacion(long id_DatoMaestro, double cantidad) {
 		super();
-		this.nombre = nombre;
+		this.id_DatoMaestro = id_DatoMaestro;
 		this.cantidad = cantidad;
-=======
-
-	public DatoMaestro(String nombre) {
-		super();
-		this.nombre = nombre;
->>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
 	}
-
-	public long getId_Dmaestro() {
-		return id_Dmaestro;
+	public long getId_apotaciones() {
+		return id_apotaciones;
 	}
-
-	public void setId_Dmaestro(long id_Dmaestro) {
-		this.id_Dmaestro = id_Dmaestro;
+	public void setId_apotaciones(long id_apotaciones) {
+		this.id_apotaciones = id_apotaciones;
 	}
-
-	public String getNombre() {
-		return nombre;
+	public long getId_DatoMaestro() {
+		return id_DatoMaestro;
 	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setId_DatoMaestro(long id_DatoMaestro) {
+		this.id_DatoMaestro = id_DatoMaestro;
 	}
-
-<<<<<<< HEAD
 	public double getCantidad() {
 		return cantidad;
 	}
-
 	public void setCantidad(double cantidad) {
 		this.cantidad = cantidad;
 	}
-
-=======
->>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
 	public Campania getCampania() {
 		return campania;
 	}
-
 	public void setCampania(Campania campania) {
 		this.campania = campania;
 	}
-
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((campania == null) ? 0 : campania.hashCode());
-<<<<<<< HEAD
 		long temp;
 		temp = Double.doubleToLongBits(cantidad);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-=======
->>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
-		result = prime * result + (int) (id_Dmaestro ^ (id_Dmaestro >>> 32));
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + (int) (id_DatoMaestro ^ (id_DatoMaestro >>> 32));
+		result = prime * result + (int) (id_apotaciones ^ (id_apotaciones >>> 32));
+		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -106,26 +83,30 @@ public class DatoMaestro {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		DatoMaestro other = (DatoMaestro) obj;
+		Aportacion other = (Aportacion) obj;
 		if (campania == null) {
 			if (other.campania != null)
 				return false;
 		} else if (!campania.equals(other.campania))
 			return false;
-<<<<<<< HEAD
 		if (Double.doubleToLongBits(cantidad) != Double.doubleToLongBits(other.cantidad))
 			return false;
-=======
->>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
-		if (id_Dmaestro != other.id_Dmaestro)
+		if (id_DatoMaestro != other.id_DatoMaestro)
 			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
+		if (id_apotaciones != other.id_apotaciones)
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
 				return false;
-		} else if (!nombre.equals(other.nombre))
+		} else if (!usuario.equals(other.usuario))
 			return false;
 		return true;
 	}
+	
+	
+	
+	
+	
 	
 	
 }

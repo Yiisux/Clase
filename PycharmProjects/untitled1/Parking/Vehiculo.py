@@ -19,4 +19,8 @@ class Vehiculo(object):
         self.__tiempo = tiempo
 
     def calcularPrecio(self):
-        precioTotal = self.__tiempo * 0.04
+        return self.__tiempo * 0.04
+
+
+    def __str__(self):
+        return "\nMATRICULA: %s \nMARCA: %s \nTIEMPO: %s" % (self.getMatricula(), self.getMarca(), self.getTiempo())

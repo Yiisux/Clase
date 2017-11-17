@@ -22,20 +22,37 @@
     <div class="container">
 
     	<form class="form-signin">
-    		<h1 class="form-signin-heading text-muted">Registrar</h1>
-    		<input type="text" class="form-control" placeholder="Email address" required="" autofocus="" id="usuario">
-    		<input type="password" class="form-control" placeholder="Password" required="" id="pass">
+    		<h1 class="form-signin-heading text-muted">Login</h1>
+    		<input type="text" class="form-control" placeholder="Email address" required="" autofocus="" id="inputEmail">
+    		<input type="password" class="form-control" placeholder="Password" required="" id="inputPassword">
         <div class="form-group">
         <label class="col-md-4 control-label" for="recordar">Recordar</label>
 
-            <input type="checkbox" name="recordar" id="recordar-0" value="1">
-      
+            <input type="checkbox" name="recordar" id="recordar" value="1">
 
-    		<a href="historial.html"><input type="button" class="btn btn-lg btn-primary btn-block" type="submit" onclick="registrar()" placeholder="ENTRAR">
-    		</button></a>
+
+    <input type="button" class="btn btn-lg btn-primary btn-block" type="submit" id="logiin" placeholder="ENTRAR"/>
+
+
+
+    <br><br><br><br><br><br>
+    <div class="container">
+
+      <form class="form-signin">
+        <h1 class="form-signin-heading text-muted">Registrar</h1>
+        <input type="text" class="form-control" placeholder="Nombre" required="" autofocus="" id="nombre">
+        <input type="text" class="form-control" placeholder="Email address" required="" autofocus="" id="email">
+        <input type="password" class="form-control" placeholder="Password" required="" id="pass">
+        <div class="form-group">
+        <label class="col-md-4 control-label" for="recordar" id="recordar">Recordar</label>
+
+    <input type="button" class="btn btn-lg btn-primary btn-block" type="submit" id="logiinRegistro" placeholder="ENTRAR"/>
+
+
     	</form>
 
     </div>
+<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/session.js">
 
     </script>

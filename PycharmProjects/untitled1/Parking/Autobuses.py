@@ -9,3 +9,11 @@ class Autobuses(Vehiculo):
     def setNumAsientos(self, numAsientos):
         self.__numAsientos = numAsientos
 
+
+    def calcularPrecio(self):
+       #Sumo al precio generico el impuesto de Autobuses
+        return self.getNumAsientos() * 0.25 + super(Autobuses, self).calcularPrecio()
+
+
+    def __str__(self):
+        return super(Autobuses, self).__str__() + "\nNÚMERO DE ASIENTOS: %s" % (self.getNumAsientos())

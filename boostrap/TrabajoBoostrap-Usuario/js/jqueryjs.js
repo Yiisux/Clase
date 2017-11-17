@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 var listadoAverias;
 var idTallerEditar;
@@ -53,29 +54,15 @@ $.ajax({
 })
 .fail(function( error){
   console.log("Error del servidor");
+=======
+if (localStorage.getItem("email")===null) {
+        document.getElementById('email').textContent = sessionStorage.getItem("email");
+      }else {
+        document.getElementById('email').textContent = localStorage.getItem("email");
+      }
+$(document).on("click", "#salir", function () {
+      alert("storage limpio")
+      localStorage.removeItem("email");
+      sessionStorage.removeItem("email");
+>>>>>>> 47e4b69b279cb2e38c080c53225d989df376cf40
 });
-
-
-  //agregar
-    $(document).on("click","#btn-guardar-nota",function(){
-      $.ajax({
-    method: "POST",
-    url: "http://www.miguelcamposrivera.com/mecaround/api/v1/taller/editar",
-    data: { "0gosgg04gsks0kcs0k00848ks4g4ww0okco8kgos": key, titulo: $("#titulo").val(), descripcion: $("#descripcion").val(), marca: $("#marca").val(), modelo: $("#modelo").val()   }
-  })
-  .done(function( respuesta ) {
-    // respuesta > es un objeto JSON que recibo del servidor
-    listadoAverias = respuesta.averias;
-    mostrarAverias();
-  })
-  .fail(function( error){
-    console.log("Error del servidor");
-  });
-      $('#modalNuevaNota').modal('hide');
-    });
-
-    //limpiar modal
-    $('.modal').on('hidden.bs.modal', function(){
-    		$(this).find('form')[0].reset(); //para borrar todos los datos que tenga los input, textareas, select.
-    		$("label.error").remove();  //lo utilice para borrar la etiqueta de error del jquery validate
-    	});
