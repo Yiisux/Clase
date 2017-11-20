@@ -30,3 +30,7 @@ comando db.ejemplo.find().sort().pretty(): ordena la búsqueda pero tenemos que i
 comando db.ejemplo.find().sort({edad: 1}).pretty(): ordena la búsqueda por edades de menor a mayor
 
 comando  db.ejemplo.find().sort({email : 1}).limit(4).pretty(): nos muestra el de la posicion 4 
+
+
+comando db.restaurants.find({},{name: true}).limit(1).pretty(): muestra solo el nombre del restaurante limitando a ver solo 1
+
