@@ -10,6 +10,8 @@ import {Nota} from '../modelos/alumno';
 export class NotaComponent implements OnInit {
   notaEjemplo: Nota = new Nota(1, 'Lista compra', 'Leche,pan,huevos', '#3289ff');
   totalNotas = 10;
+  encabezado = 'Encabezado original';
+  titulo2 = 'Ejemplo de titulo';
   constructor() { }
   getTotalNotas() {
     return this.totalNotas;
