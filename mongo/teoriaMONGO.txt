@@ -32,5 +32,13 @@ comando db.ejemplo.find().sort({edad: 1}).pretty(): ordena la búsqueda por edade
 comando  db.ejemplo.find().sort({email : 1}).limit(4).pretty(): nos muestra el de la posicion 4 
 
 
-comando db.restaurants.find({},{name: true}).limit(1).pretty(): muestra solo el nombre del restaurante limitando a ver solo 1
+comando db.restaurants.find({},{name: true}).limit(1).pretty(): muestra solo el nombre del restaurante limitando a ver solo
 
+--------------------------------BUSQUEDAS Y OPERADORES----------------------------------------------
+ db.restaurants.find({"address.street": "3 Avenue", cuisime: {$ne: "Mexican"}}, {}).pretty(): muestra todos los restaurantes de la 3 avenida que no sean mexicanos, con .count() al final los contariamos
+
+db.restaurants.find({cuisine: {$in: ["American", "Irish"]}}).count(): buscar aquellos restaurantes que tengan cocina americana o irlandesa
+(El $in es para decir "en" y el $nin es lo contrario) (https://docs.mongodb.com/manual/reference/operator/query/)
+
+ db.restaurants.find({"grades.score" : {$gt: 10}, "grades.score" : {$lt: 20}}).count() = todos los grados menores de 20 ya que el primero no lo coje
+ db.restaurants.find({"grades.score" : {$gt: 10, $lt : 60}}).pretty() =  esta es la mejor forma , sale el score de entre 10 y 60
