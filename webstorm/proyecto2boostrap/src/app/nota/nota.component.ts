@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Nota} from '../modelos/alumno';
+import {Nota} from '../modelos/nota';
 
 
 @Component({
@@ -8,7 +8,7 @@ import {Nota} from '../modelos/alumno';
   styleUrls: ['./nota.component.css']
 })
 export class NotaComponent implements OnInit {
-  notaEjemplo: Nota = new Nota(1, 'Lista compra', 'Leche,pan,huevos', '#3289ff');
+  notaEjemplo: Nota = new Nota(1, 'Lista compra', 'Leche,pan,huevos', '#3289ff', true);
   totalNotas = 10;
   encabezado = 'Encabezado original';
   titulo2 = 'Ejemplo de titulo';
