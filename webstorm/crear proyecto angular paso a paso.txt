@@ -1,0 +1,40 @@
+1- Meter una plantilla
+  - Copiamos las carpetas de la plantilla en la carpeta assent (no copiamos los archivos sueltos solo directorios)
+
+2- importar plantilla
+ -cogemos el index de la plantilla y lo arrastramos al webstorm
+ -copiamos todo con Control + a , control + c 
+ -vamos al index.html del angular y borramos todos menos la etiqueta <base href="/"/> y pegamos lo que habiamos copiado
+ 
+3- metemos las rutas de css
+ -Copiamos las ruta 1 por 1 CSS y vamos a un archivo que se llama angular.cli que tiene una propiedad llamada style
+  donde tenemos que poner la ruta que tenemos copiadas pero editamos la ruta con ./assets/(loquesea)
+
+4- metemos las rutas js
+ -Simplemente cambiamos la ruta poniendo ./assets/
+
+5- Poner la etiqueta <app-root> al principio o al final
+
+
+----------------CREAMOS UN COMPONENTE-----------------
+
+1- desde el terminal ejecutamo el siguiente ng g c (nombre del componente) ejemplo: ng g c Articulo
+
+2- creamos un modelo
+  - dentro de la carpeta app creamo la carpeta models 
+  - creamos un fichero typescript llamado Articulo
+  - defines una clase con su constructor
+
+3- vamos al componente.ts y declaramo los componentes de una clase
+  - antes del constructor tenemos que definir el nombre de la propiedad (listaProducto: Array<Articulo> = [
+	{
+		ref: 1, nombre: "zapato" ....	
+	}
+	];
+    (podemos importar con alt + enter)
+
+4- cambiamos el contenido de <app-root> por la etiquete <app-articulo> para que se cargue lo que tenemos en el html de articulo
+ - creamos la talba en <app-articulo> y en los tr ponemos los atributos que le hemos dado (*ngFor="let articulo of listaProductos) (es un for como en thymeleaf)
+ - en los td tenemos que poner src="{{articulo.foto}}" o [src]="articulo.foto 
+   otro ejemplo: <td>{{articulo.nombre}}</td>
+  

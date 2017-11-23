@@ -1,0 +1,287 @@
+<h2>DateTime</h2>
+<p dir="ltr"><span>DateTime es el módulo que usamos para representar fechas y tiempos. Se utiliza de la misma forma en la versión 2.7 y 3 de python y no es necesario descargarlo ya que es uno de los módulos que ya nos viene instalado por defecto. El módulo se compone de 4 clases:</span></p>
+<ul>
+<li dir="ltr"><strong>time</strong>: con esta clase podremos trabajar con los atributos <a href="https://docs.python.org/2/library/datetime.html#datetime.time.hour">hour</a>, <a href="https://docs.python.org/2/library/datetime.html#datetime.time.minute">minute</a>, <a href="https://docs.python.org/2/library/datetime.html#datetime.time.second">second</a>, <a href="https://docs.python.org/2/library/datetime.html#datetime.time.microsecond">microsecond</a>, y <a href="https://docs.python.org/2/library/datetime.html#datetime.time.tzinfo">tzinfo</a> que sirven para medir el tiempo de diferentes formas sin llegar a utilizar los días. Podemos dar 23432 segundos, 2345 horas, 121342 minutos pero no podemos representar ese tiempo en días.</li>
+</ul>
+<p dir="ltr"><span>     <span style="text-decoration: underline;"><em>(</em></span></span><span style="text-decoration: underline;"><em>from datetime import time)</em></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>date</strong><span>: nos permite obtener y manejar fechas del calendario gregoriano. Está compuesta de los siguientes atributos </span><span> </span><a href="https://docs.python.org/2/library/datetime.html#datetime.date.year"><span>year</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.date.month"><span>month</span></a><span>, y </span><a href="https://docs.python.org/2/library/datetime.html#datetime.date.day"><span>day</span></a><span>.. A diferencia de la clase time , con la clase date no podemos saber las horas, minutos y segundos de un tiempo pero si podemos manejar el tiempo en días, meses y años.</span></p>
+</li>
+</ul>
+<p dir="ltr"><span>     <span style="text-decoration: underline;"><em>(from datetime import date)</em></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>datetime</strong>:</span><span> esta clase es la combinación de las dos anteriores ya que contiene todos los atributos de ambas y puede manejar el tiempo tanto en días como meses como segundos </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.year"><span>year</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.month"><span>month</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.day"><span>day</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.hour"><span>hour</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.minute"><span>minute</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.second"><span>second</span></a><span>, </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.microsecond"><span>microsecond</span></a><span>, y </span><a href="https://docs.python.org/2/library/datetime.html#datetime.datetime.tzinfo"><span>tzinfo</span></a><span>.</span></p>
+</li>
+</ul>
+<p dir="ltr"><span>      (<span style="text-decoration: underline;"><em>from datetime import datetime)</em></span></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><strong>timedelta</strong><span>: representa la diferencia entre dos fechas u horas</span></p>
+</li>
+</ul>
+<p dir="ltr"><span>     <em>(<span style="text-decoration: underline;">from datetime import timedelta)</span></em></span></p>
+<ul>
+<li dir="ltr">
+<p dir="ltr"><span><strong>tzinfo</strong>:</span><span> se utiliza para manejar zonas horarias pero es una clase abstracta por lo cual no podemos instanciarla directamente</span></p>
+</li>
+</ul>
+<p dir="ltr"><span>Por supuesto podemos definir todos los import separándolos por una coma </span></p>
+<p dir="ltr"><span style="text-decoration: underline;"><em>(from datetime import time, date, datetime, timedelta)</em></span></p>
+<p dir="ltr"><span>Ahora que ya sabemos para qué sirve cada clase, vamos a explicar algunos de los métodos más usados de estas clases.</span></p>
+<h2>Método date.today()</h2>
+<p><span style="font-size: small;">En la clase date disponemos del método today que es muy util para trabajar con fechas, con este método podemos obtener el día de la semana en el que estamos (Lunes, Martes...) , el día actual del mes , el mes en el que estamos y el año. Podemos obtener los formatos de la siguiente forma:</span></p>
+<h3><span style="font-size: small;">Ejemplo date.today()</span></h3>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;">diaCompleto <span style="color: #333333;">=</span> date<span style="color: #333333;">.</span>today()<br /><span style="color: #888888;"># Obtenemos la fecha local actual con el siguiente formato 2014-09-27<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Día completo: "</span>, diaCompleto<br /><br /><span style="color: #888888;"># Obtenemos un número entero con el día del mes. Ejemplo: 27<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Día del mes: "</span>, diaCompleto<span style="color: #333333;">.</span>day<br /><br /><span style="color: #888888;"># Obtenemos un número entero con el mes del año. Ejemplo: 9 corresponde a septiembre<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Mes en el que estamos: "</span>, diaCompleto<span style="color: #333333;">.</span>month<br /><br /><span style="color: #888888;">#  Obtenemos un número de 4 dígitos con el año actual: Ejemplo: 2014<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Año actual: "</span>, diaCompleto<span style="color: #333333;">.</span>year<br /><br /><span style="color: #888888;"># Obtenemos un número entero con el día de la semana: 0 = lunes, 1 = martes, 2</span>
+<span style="color: #888888;"># = miércoles, 3 = jueves, 4 = viernes, 5 = sábado y 6 = domingo<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Día de la semana en el que estamos: ", diaCompleto.weekday()</span>
+</pre>
+</div>
+<p> </p>
+<h2>Método datetime.now()</h2>
+<p dir="ltr"><span>Este método pertenece a la clase datetime y nos proporciona la fecha actual pero no solo nos indica el año, mes, día… también nos dice la hora exacta , los minutos y los segundos.</span></p>
+<p dir="ltr"><span>Si no queremos mostrar la fecha de forma tan completa siempre podemos utilizar los siguientes métodos:</span></p>
+<h3>Ejemplo datetime.now()</h3>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="font-size: small;">tiempoActual <span style="color: #333333;">=</span> datetime<span style="color: #333333;">.</span>now()  <span style="color: #888888;"># Obtiene fecha actual incluyendo hora , minutos, segundos y microsegundos<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Fecha y Hora:"</span>, tiempoActual  <span style="color: #888888;"># Muestra fecha, hora, minutos , segundos y microsegundos<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Fecha y Hora UTC:"</span>,tiempoActual<span style="color: #333333;">.</span>utcnow()  <span style="color: #888888;"># Muestra fecha, hora, minutos, segundos y microsegundos en formato UTC<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Día:"</span>,tiempoActual<span style="color: #333333;">.</span>day  <span style="color: #888888;"># Muestra el día actual<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Mes:"</span>,tiempoActual<span style="color: #333333;">.</span>month  <span style="color: #888888;"># Muestra el mes actual<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Año:"</span>,tiempoActual<span style="color: #333333;">.</span>year  <span style="color: #888888;"># Muestra el año actual<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Hora:"</span>, tiempoActual<span style="color: #333333;">.</span>hour  <span style="color: #888888;"># Muestra la hora actual<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Minutos:"</span>,tiempoActual<span style="color: #333333;">.</span>minute  <span style="color: #888888;"># Muestra el minuto actual<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Segundos:"</span>, tiempoActual<span style="color: #333333;">.</span>second  <span style="color: #888888;"># Muestra el segundo actual<br /><br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Microsegundos:"</span>,tiempoActual<span style="color: #333333;">.</span>microsecond  <span style="color: #888888;"># Muestra microsegundo</span>
+</span></pre>
+</div>
+<p> </p>
+<h2>Método time y comparando tiempos</h2>
+<p dir="ltr"><span>con el método time() podemos indicar un tiempo en horas, minutos y segundos y támbien podemos comprar 2 horas diferentes y saber si una</span></p>
+<h3 dir="ltr"><span style="font-size: small;">Ejemplo time()</span></h3>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #888888;">#Establecemos la hora 1<br /></span>
+hora1 <span style="color: #333333;">=</span> time(<span style="color: #0000dd; font-weight: bold;">12</span>, <span style="color: #0000dd; font-weight: bold;">30</span>, <span style="color: #0000dd; font-weight: bold;">35</span>)<br /><span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Hora 1: "</span>, hora1<br /><span style="color: #888888;">#Establecemos la hora 2<br /></span><br />
+hora2 <span style="color: #333333;">=</span> time(<span style="color: #0000dd; font-weight: bold;">14</span>, <span style="color: #0000dd; font-weight: bold;">33</span>, <span style="color: #0000dd; font-weight: bold;">45</span>)<br /><span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Hora 2: "</span>, hora2<br /><br /><span style="color: #888888;">#Simplemente comparando si un tiempo es mayor, menor o igual a otro nos lo indicará con un True o False</span><br /><span style="color: #008800; font-weight: bold;">print</span> hora1 <span style="color: #333333;">&gt;</span> hora2</pre>
+</div>
+<p>Si quisiéramos sacar la hora, los minutos y segundos actuales tendríamos que usar el método datetime.now() de la siguiente forma: </p>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;">now <span style="color: #333333;">=</span> datetime<span style="color: #333333;">.</span>now()<br />
+tiempoActualConTime <span style="color: #333333;">=</span> time(now<span style="color: #333333;">.</span>hour, now<span style="color: #333333;">.</span>minute, now<span style="color: #333333;">.</span>second)<br /><span style="color: #008800; font-weight: bold;">print</span> tiempoActualConTime
+</pre>
+</div>
+<p dir="ltr"> </p>
+<h2>Método strptime(string[, format])</h2>
+<p dir="ltr"><span><span>Es uno de los métodos más útiles ya </span><span>que transforma un string a un tiempo normal. Este método lo tienen las clases date, time y datetime pero cada clase puede utilizarlo de diferente forma, con datetime podremos pasar cualquier tiempo o fecha que queramos y formatearlo a nuestro gusto pero para ello tenemos que saber cómo se representan.</span></span></p>
+<h3 dir="ltr">Tabla de representación de formatos en fechas</h3>
+<div dir="ltr">
+<table border="2" cellpadding="2"><colgroup><col width="60" /><col width="514" /></colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr"><span>%a</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nombre local abreviado de día de semana</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%A</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nombre local completo de día de semana</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%b</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nombre local abreviado de mes</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%B</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nombre local completo de mes</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%c</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Representación local de fecha y hora</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%d</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Día de mes [01,31]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%H</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Hora (horario 24 horas) [00,23]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%I</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Hora (horario 12 horas) [01,12]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%j</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Número de día del año [001,366]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%m</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Mes [01,12]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%M</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Minuto [00,59]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%p</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Etiqueta AM o PM</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%S</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Segundo</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%U</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nº semana del año. Se considera al Domingo como primer día de semana [00,53]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%w</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Establece el primer día de semana [0(Domingo),1(Lunes)... 6].</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%W</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nº semana del año (Se considera al Lunes como primer día de semana) [00,53]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%x</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Fecha local</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%X</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Hora local</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%y</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Año en formato corto [00,99]</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%Y</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Año en formato largo</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr"><span>%Z</span></p>
+</td>
+<td>
+<p dir="ltr"><span>Nombre de Zona Horaria</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span> Ahora que ya sabemos cómo representar el formato del tiempo y las fechas vamos a hacer algunos ejemplos.</span></p>
+<h3>Ejemplo strptime()</h3>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #888888;">#De la fecha actual de hoy vamos a sacar solo la hora, el minuto y los segundos<br /></span>
+horaActual <span style="color: #333333;">=</span> datetime<span style="color: #333333;">.</span>now()<span style="color: #333333;">.</span>strftime(<span style="background-color: #fff0f0;">"%H:%M:%S"</span>)<br /><br /><span style="color: #008800; font-weight: bold;">print</span> horaActual</pre>
+</div>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #888888;">#De la fecha actual de hoy vamos a sacar la semana en la que estamos<br /></span>
+semanaActual <span style="color: #333333;">=</span> datetime<span style="color: #333333;">.</span>now()<span style="color: #333333;">.</span>strftime(<span style="background-color: #fff0f0;">"%U"</span>)<br /><br /><span style="color: #008800; font-weight: bold;">print</span> semanaActual<br /><br /><span style="color: #888888;">#De la fecha actual de hoy vamos a sacar la fecha actual sin hora pero con el año en formato corto<br /></span>
+horarioFormatoCorto <span style="color: #333333;">=</span> datetime<span style="color: #333333;">.</span>now()<span style="color: #333333;">.</span>strftime(<span style="background-color: #fff0f0;">"</span><span style="background-color: #eeeeee;">%d</span><span style="background-color: #fff0f0;">/%m/%y"</span>)<br /><br /><span style="color: #008800; font-weight: bold;">print</span> horarioFormatoCorto<br /><br /><span style="color: #888888;">#Ahora una hora corta indicando si es AM o PM<br /></span>
+horaCorta <span style="color: #333333;">=</span> datetime<span style="color: #333333;">.</span>now()<span style="color: #333333;">.</span>strftime(<span style="background-color: #fff0f0;">"%I:%M:%S %p"</span>)<br /><br /><span style="color: #008800; font-weight: bold;">print</span> horaCorta
+</pre>
+</div>
+<p> </p>
+<h2>Método timedelta()</h2>
+<p><span style="font-size: small;">Con este método podemos sumar y restar fechas de una forma muy simple solo tenemos que pasar como parámetro el tiempo que queremos sumar/restar, también podemos separar por "," diferentes parámetros en los que queremos que se haga la operación.</span></p>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #888888;">#Sumamos a la fecha actual 2 días<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Fecha dentro de 2 días: "</span>, date<span style="color: #333333;">.</span>today() <span style="color: #333333;">+</span> timedelta(days<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">2</span>)
+</pre>
+</div>
+<p>Para hacer operaciones con horas, minutos y segundos recordar que necesitamos usar la clase datetime ya que date no maneja tiempos.</p>
+<h3>Ejemplo timedelta()</h3>
+<div style="background: #ffffff; width: auto; border: solid #808080; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #888888;">#Sumamos a la fecha actual 2 horas<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Fecha dentro de 2 horas: "</span>, datetime<span style="color: #333333;">.</span>now() <span style="color: #333333;">+</span> timedelta(hours<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">2</span>)<br /><br /><span style="color: #888888;">#restamos a la fecha actual 10 días , 5 horas y 20 minutos<br /></span>
+<span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Fecha hace  10 días y 5 horas y 20 minutos: "</span>, datetime<span style="color: #333333;">.</span>now() <span style="color: #333333;">-</span> timedelta(days<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">10</span>, hours<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">5</span>, minutes<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">20</span>)
+</pre>
+</div>
+<p> </p>
+<h2><span style="font-size: small;">Descarga todo el código de ejemplo que se ha utilizado: <a href="https://github.com/Jarteaga2dam/datetime">https://github.com/Jarteaga2dam/datetime</a></span></h2>
