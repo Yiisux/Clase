@@ -1,0 +1,18 @@
+
+<div class="col-lg-4 mb-4" >
+  <div class="card card-inverse" [ngStyle]="{backgroundColor: nota.categoria.color}">
+    <div class="card-header">{{nota.titulo}}</div>
+
+    <div class="card-block">
+      <p>{{nota.descripcion}}</p>
+    </div>
+    <div class="card-block">
+      <span><p>{{nota.categoria.nombre}}</p></span>
+    </div>
+    <div class="centrar">
+      <button type="button" class="btn btn-sm btn-success" (click)="editar(nota)">Editar</button>
+    <button type="button" class="btn btn-sm btn-danger" (click)="borrar(nota)">Eliminar</button>
+
+      </div>
+  </div>
+</div>
