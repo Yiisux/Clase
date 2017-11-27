@@ -1,0 +1,30 @@
+1- ejecutar npm init
+2- dejar todos los parametros por defecto con intro
+3- intalar las dependencias
+    podemos instalarlo con instal mongoose loquesea o de forma manual añadiendo esta linea al final del package json
+
+	  "dependencies": {
+    "mongoose": "^4.13.5"
+  }
+
+4- añadir la linea de ejemplo primera de "http://mongoosejs.com/"
+
+5- cambiar el var por let en el mongoose
+
+6- cambiar el .connect por mongoose.connect('mongodb://192.168.99.100:27017/test', { useMongoClient: true });
+
+7- iniciar docker
+   docker start mongoJarteaga
+
+
+
+
+
+
+
+
+----------------------------------------------------------PROYECTO 2----------------------------------
+1 crear un proyecto y instalar "npm install -g express-generator-api" (https://www.npmjs.com/package/express-generator-api)
+2 - ejecutar "express-api ."
+3 - vamos a edit, run configuration, creamos una nueva con npm y le cambiamos el run por start
+4 - en la ultima opcion le damos a los "..." y creamos uno nuevo con DEBUG loquesesa

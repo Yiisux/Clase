@@ -1,0 +1,11 @@
+1º- colores con google keep (?)
+
+1- instalamos los iconos con "npm install material-design-icons"
+         
+        o podemos usar un enlace como este:
+
+2- ponemos este enlace en el html "<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">"
+
+       página de iconos : "https://material.io/icons/"
+
