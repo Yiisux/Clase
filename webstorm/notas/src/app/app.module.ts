@@ -8,6 +8,7 @@ import { NotaListadoComponentComponent } from './nota-listado-component/nota-lis
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaListadoComponent } from './categoria-listado/categoria-listado.component';
 import {Route, RouterModule} from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const rutas: Route[] = [
   {path: '', component: AppComponent},
@@ -26,7 +27,8 @@ const rutas: Route[] = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(rutas)
+    RouterModule.forRoot(rutas),
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@
 
 7- iniciar docker
    docker start mongoJarteaga
-
+    {name: 'Fresa', descripcion: 'Fresita', url: 'http://media.mercola.com/assets/images/foodfacts/strawberry-nutrition-facts.jpg', precio: 3})
 
 
 

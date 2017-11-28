@@ -1,11 +1,12 @@
- <div class="card card-inverse" [ngStyle]="{backgroundColor: nota.categoria.color}">
+
+<div class="card card-inverse" [ngStyle]="{backgroundColor: nota.categoria.color}">
     <div class="card-header">{{nota.titulo}}</div>
 
     <div class="card-block">
       <p>{{nota.descripcion}}</p>
     </div>
     <div class="card-block">
-      <span><p>{{nota.categoria.nombre}}</p></span>
+      <span><p><a routerLink="/categorias"> {{nota.categoria.nombre}}</a></p></span>
     </div>
     <div class="centrar">
       <i class="material-icons" (click)="editar(nota)">mode_edit</i>

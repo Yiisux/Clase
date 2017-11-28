@@ -1,0 +1,6 @@
+1º npm install --save @ng-bootstrap/ng-bootstrap
+
+2º ahora solo esta instalada por lo que tenemos que importarla, en el modulo principal del proyecto tenemos que tener (https://ng-bootstrap.github.io/#/getting-started)
+instalado {NgbModule} "import {NgbModule} from '@ng-bootstrap/ng-bootstrap';" y en la parte de import ponemos : "NgbModule.forRoot()"
+
+3º borrar las etiquetas script y jquery del index

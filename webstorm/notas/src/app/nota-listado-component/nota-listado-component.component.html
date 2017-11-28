@@ -1,7 +1,38 @@
+
 <h1>Lista de notas</h1>
+
+<button class="btn btn-lg btn-outline-primary" (click)="abrirModal(modalNuevaNota)">Crear nota nueva</button><br><br>
 <div class="row">
+
   <div class="col-lg-6 mb-4" *ngFor="let nota of listadoNotas;">
 <app-nota-component [nota]="nota"></app-nota-component>
   </div>
 </div>
+
+<!-- modal nueva nota -->
+<ng-template #modalNuevaNota let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Nueva nota</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="nota-titulo" class="col-form-label">Titulo:</label>
+        <input type="text" class="form-control" id="nota-titulo">
+      </div>
+      <div class="form-group">
+        <label for="nota-descripcion" class="col-form-label">Descripcion:</label>
+        <textarea class="form-control" id="nota-descripcion"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+
 
