@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Categoria} from '../models/categoria';
+import {CategoriaService} from '../services/categoria.service';
 
 @Component({
   selector: 'app-categoria-listado',
@@ -7,13 +8,11 @@ import {Categoria} from '../models/categoria';
   styleUrls: ['./categoria-listado.component.css']
 })
 export class CategoriaListadoComponent implements OnInit {
-  listaCategoria: Array<Categoria> = [
-    {id: 1, nombre: 'Familia', color: '#3C93FC'},
-    {id: 2, nombre: 'Colegio', color: '#A786C9'}
-  ]
-  constructor() { }
+  listaCategoria: Array<Categoria>;
+  constructor(private categoriaService: CategoriaService) { }
 
   ngOnInit() {
+    this.listaCategoria = this.categoriaService.getCategoria();
   }
 
 }

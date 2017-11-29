@@ -1,10 +1,10 @@
 
-<h1>Lista de notas</h1>
+<h1>Mis notas</h1>
 
 <button class="btn btn-lg btn-outline-primary" (click)="abrirModal(modalNuevaNota)">Crear nota nueva</button><br><br>
 <div class="row">
 
-  <div class="col-lg-6 mb-4" *ngFor="let nota of listadoNotas;">
+  <div class="col-lg-6 mb-4" *ngFor="let nota of listadoNotas">
 <app-nota-component [nota]="nota"></app-nota-component>
   </div>
 </div>

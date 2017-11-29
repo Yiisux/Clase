@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Nota} from '../models/nota';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NotaService} from '../services/nota.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-nota-listado-component',
@@ -9,22 +11,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class NotaListadoComponentComponent implements OnInit {
 
-  listadoNotas: Array<Nota> = [
-    {
-      id: 1,
-      titulo: 'Lista de la compra',
-      descripcion: 'Huevos, leche y pan',
-      categoria: {id: 1, nombre: 'Familia', color: '#3C93FC'}
-    },
-    {
-      id: 2,
-      titulo: 'Deberes',
-      descripcion: 'Diseño app Keeper de desarrollo de interfazes',
-      categoria: {id: 2, nombre: 'Colegio', color: '#A786C9'}
-    }
-  ];
-
-  constructor(private modalService: NgbModal) {
+  listadoNotas: Observable<Nota[]>;
+  constructor(private modalService: NgbModal, private notaService: NotaService) {
   }
 
 
@@ -36,6 +24,7 @@ export class NotaListadoComponentComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.listadoNotas = this.notaService.getNotas();
   }
 
   abrirModal(modalNuevaNota: any) {

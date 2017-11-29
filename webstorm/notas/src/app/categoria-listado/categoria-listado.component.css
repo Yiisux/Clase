@@ -1,3 +1,7 @@
 .material-icons.md-18{
   font-size: 18px;
+  margin-top: -150%;
+}
+.btn-primary{
+  height: 20px;
 }

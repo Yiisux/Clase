@@ -10,7 +10,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let cat of listaCategoria;">
+      <tr *ngFor="let cat of listaCategoria">
         <th scope="row">{{cat.id}}</th>
         <td>{{cat.nombre}}</td>
         <td><span class="circulo" [ngStyle]="{backgroundColor:cat.color}">{{cat.color}}</span></td>

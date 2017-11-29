@@ -9,3 +9,43 @@
 
        página de iconos : "https://material.io/icons/"
 
+3- podemos añadir servicios con "ng g s loquesea"
+
+4- añadir en module.ts
+	 providers: [
+    [NotaService]
+  ],
+
+5- en el listado de notas, en el constructor añadimos "private notaService: NotaService" osea el servicio
+
+6- en el método ngOnInit le añadimos "this.mensaje = this.notaService.getNotas();" pero para ello tenemos que crear una variable
+	mensaje que sea string encima del constructor
+
+7- en el HTML del listado de notas le llamamos con {{mensaje}}
+
+8- copiamos la declaracion del array de listado de notas y la pegamos en el servicio y dejamos la declaracion de listadoNotas
+	tal que así : "listadoNotas: Array<Nota> = [];"
+
+9- cambiamos el mensaje del component por "this.listadoNotas"
+
+10- en el return del service pues retornamos "this.listadoNotas"
+getNotas(): Array<Nota> {
+    return this.listadoNotas;
+  }
+
+-------------------------------------KEY DE USUARIO----------------------------------
+sg44wogg0occ0skkkokkwwo040w4ocwco4kg0cwo
+------------------------------------------------------------------------------------------
+
+11- añadimos en los imports del app el HttpClientModule
+
+12- añadimos en el getNotas esto:
+  getNotas(): Observable<Nota[]> {
+    return this.http.get<Nota[]>(this.urlNotas + '/lista?X-API-KEY=' + this.key);
+  }
+
+13- añadimos las variables correspondientes al key y a la url general:
+" key = 'sg44wogg0occ0skkkokkwwo040w4ocwco4kg0cwo';
+  urlNotas = 'http://miguelcamposrivera.com/keeper/api/nota';"
+
+14- tambien ponemos el observable en listado-nota-component

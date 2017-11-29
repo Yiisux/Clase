@@ -1,0 +1,93 @@
+---------------------MI PRIMER API----------------
+1- proyecto emplty
+2- instalar "npm install -g express-generator-api" (si ya esta instalado no hay que hacerlo más)
+3- creamos el start en run- runcofiguration - new, cambiamos de run a start y al final del todo le damos a los 3 puntos
+	y creamos un debug nuevo llamado "DEBUG" y el nombre del proyecto terminado en :*
+
+4- añadimos dependencias moongose y morgan
+
+5- sustituimos los var de "require" y el "express" en el app por const, juntamos todas y damos control+r , en la primera linea
+	ponemos var y en la 2º const y pulsamos con remplace all
+
+6- añadimos morgan "const logger = require("morgan"); //para realizar el loggin de la aplicacion" (//para realizar el loggin de la aplicacion)
+
+7- añadimos "app.use(logger("dev"));" (//para inicializar el loggin)
+
+8- creamos una carpeta llamada "models"
+
+9- creamos los modelos añadiendo  "const mongoose = required('mongoose');
+					const Schema = mongoose.Schema;"
+
+10- añadimos la linea de exportar el modelo "module.exports = mongoose.model('Nota', notaSchema);"
+
+11- añadimos la linea "mongoose.connect('mongodb://192.168.99.100:27017/keeper',  { useMongoClient: true });"
+
+12- añadimos la linea "mongoose.Promise = global.Promise;"
+
+13- con docker start mongoJesus iniciamos la bbdd
+
+14- en la carpeta routes creamos un js llamado notas que va a manegar las rutas de notas
+
+15- implementamos el express y el router "const express = require('express');
+						let router = express.Router();"
+
+16- aqui podemos ver metodos de res. (http://expressjs.com/es/guide/routing.html)
+---------------------------FORMA QUE NO USAREMOS------------------------------------
+17- creamos la ruta para las notas de esta maneraa:
+	"router.get('/', (req, res) => {
+  	  res.status(200).json([{titulo: 'Saludos invocador', descripcion: 'Hola mundo'}]);
+	});"
+
+NOTA: ESTO NO LO HACEMOS ASÍ REALMENTE YA QUE LOS DATOS LOS METEREMOS DESDE OTRO LADO
+-------------------------------------------------------------------------------------
+18- exportamos el router con "exports.module = router;"
+
+19- vamos al app.js y añadimos la ruta de la carpeta controladora y su ruta:
+	"const notas = require('./routes/notas');"
+	"app.use('/api/v1/notas', notas);"
+
+20- creamos una carpeta llamada controller y añadimos notas.js
+
+21- añadimos los const y el método para mostrar todas las notas que hay en nuestra bbdd
+
+const Nota = require('../models/notas');
+
+module.exports.findAllNotas = (req, res) => {
+  Nota.find((err, notas) => {
+     if (err) res.status(500).jsonp({error: 500, mensaje: `${err.mensaje}`});
+
+     res.status(200).jsonp(notas);
+  });
+};
+
+22- nos vamos a notas.js de router y añadimos el const de nuestro controlador de notas "const notasController = require('../controller/notas');"
+
+23- ponemos la ruta "router.get('/',notasController.findAllNotas(req, res));"
+
+24- en el enrutador de notas creamos un metodo get para buscar por id "router.get('/:id', notasController.findById);"
+module.exports.findById = (req, res) => {
+    Nota.findById(req.params.id, (err, nota) => {
+        if (err) res.status(404).json({error: 404, mensaje: "No existe una nota con ese ID"});
+
+        res.status(200).jsonp(nota);
+    });
+};
+
+25- creamos el metodo añadir nota
+module.exports.addNota = (req, res) => {
+    let nuevaNota = new Nota({
+        titulo: req.body.titulo,
+        descripcion: req.body.descripcion
+    });
+    nuevaNota.save(function(err, nota){
+        if (err) res.status(500).jsonp({error: 500, mensaje: `${err.mensaje}`});
+
+        res.status(201).jsonp(nota);
+    })
+};
+
+26- ponemos la ruta en el router
+"router.get('/:id', notasController.findById);
+router.post('/', notasController.addNota);"
+
+
