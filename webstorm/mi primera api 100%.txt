@@ -171,6 +171,8 @@ module.exports {
 
 35- creamos carpeta middlewares y dentro el archivo auth.js
 
+36- creamos el singIn
+
 
 
 
