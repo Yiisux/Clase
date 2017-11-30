@@ -13,6 +13,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NotaService} from './services/nota.service';
 import {CategoriaService} from './services/categoria.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 const rutas: Route[] = [
   {path: '', component: AppComponent},
@@ -33,7 +34,8 @@ const rutas: Route[] = [
     BrowserModule,
     RouterModule.forRoot(rutas),
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     [NotaService],

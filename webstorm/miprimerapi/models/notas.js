@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 let notaSchema = new Schema({
     titulo: String,
-    descripcion: String
+    descripcion: String,
+
 });
 
 //aqui podriamos añadirle métodos

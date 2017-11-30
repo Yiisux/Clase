@@ -3,5 +3,13 @@
 }
 
 a{
-  color: white;
+  font-weight: bold;
 }
+p{
+
+  color: black;
+}
+.ptitulo{
+  font-weight: bold;
+}
+

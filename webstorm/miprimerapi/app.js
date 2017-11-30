@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require("morgan"); //para realizar el loggin de la aplicacion
 const mongoose = require('mongoose');
+//const auth = require('middlewares/auth');
 
 //en un futuro lo refactorizaremos
 mongoose.connect('mongodb://192.168.99.100:27017/keeper',  { useMongoClient: true });

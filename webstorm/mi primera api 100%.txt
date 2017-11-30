@@ -91,3 +91,89 @@ module.exports.addNota = (req, res) => {
 router.post('/', notasController.addNota);"
 
 
+27- hacemos lo mismo con los métodos crud que faltan ejemplo editar:
+module.exports.editNota = (req, res) => {
+    Nota.findById(req.params.id, (err, nota) => {
+     nota.titulo = req.body.titulo;
+     nota.descripcion = req.body.descripcion;
+
+     nota.save((err) => {
+         if (err) res.status(500).jsonp({error: 500, mensaje: `${err.mensaje}`});
+
+         res.status(200).jsonp(nota);
+     });
+  });
+};
+
+28- creamos en el modelo "users" 
+29- el email lo ponemos que sea unico y que lo transforme a lowercase y la contraseña select false
+const userSchema = new Schema({
+    email: {type: String, unique: true, lowercase: true},
+    displayName: String,
+    avatar: String,
+    password: {type: String, select: false},
+    singupDate: {type: Date, defaul: Date.now()},
+    lastLogin: Date
+});
+
+30- añadimos 2 librerias mas tanto en la clase users como en el packaje
+
+
+const bcrypt = require('bcrypt-nodejs');
+const crypto = require('crypto');
+
+pero en elpackaje.json solo añadimos el bcrypt
+
+
+31- codigo final de user models
+userSchema.pre('save', function (next) {
+        let user = this;
+
+        if (user.isModified('email')) {
+            const md5 = crypto.createHash('md5').update(user.email).digest('hex');
+
+            user.avatar = `https://gravatar.com/avatar/${md5}?s=200&d=retro`
+        }
+        if (user.isModified('password')) return next();
+
+        bcrypt.genSalt(10, (err, salt) => {
+        if (err) return next();
+
+        bcrypt.hash(user.password, salt, null, (err, hash) => {
+           if (err) return next();
+
+           user.password = hash;
+           next();
+        });
+    });
+});
+
+
+32- controlador de user
+
+
+33- dependencias json
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "crypto": "^1.0.1",
+    "express": "~4.13.1",
+    "mongoose": "^4.13.5",
+    "morgan": "^1.9.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.19.3"
+
+34- creamos archivo de configuracion config.js con el siguiente codigo
+module.exports {
+    SECRET_TOKEN: 'tokenJesus'
+}
+
+35- creamos carpeta middlewares y dentro el archivo auth.js
+
+
+
+
+
+
+

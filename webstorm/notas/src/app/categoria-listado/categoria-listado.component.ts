@@ -8,7 +8,7 @@ import {CategoriaService} from '../services/categoria.service';
   styleUrls: ['./categoria-listado.component.css']
 })
 export class CategoriaListadoComponent implements OnInit {
-  listaCategoria: Array<Categoria>;
+  listaCategoria: Array<Categoria> = [];
   constructor(private categoriaService: CategoriaService) { }
 
   ngOnInit() {

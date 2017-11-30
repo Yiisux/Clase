@@ -21,15 +21,22 @@
     <form>
       <div class="form-group">
         <label for="nota-titulo" class="col-form-label">Titulo:</label>
-        <input type="text" class="form-control" id="nota-titulo">
+        <input type="text" class="form-control" id="nota-titulo" name="titulo" [(ngModel)]="nuevaNotaTitulo" />
       </div>
       <div class="form-group">
-        <label for="nota-descripcion" class="col-form-label">Descripcion:</label>
-        <textarea class="form-control" id="nota-descripcion"></textarea>
+        <label for="nota-descripcion" class="col-form-label" >Descripcion:</label>
+        <textarea class="form-control" id="nota-descripcion" name="descripcion" [(ngModel)]="nuevaNotaDescripcion"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="nota-categoria" class="col-form-label" >Categoria:</label>
+        <select id="nota-categoria" name="categoria" [(ngModel)]="idCategoria" >
+          <option *ngFor='let c of listaCategoria' [ngValue]='c.id'>{{c.id}}</option>
+        </select>
       </div>
     </form>
   </div>
   <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="guardarNota()">Guardar</button>
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
   </div>
 </ng-template>

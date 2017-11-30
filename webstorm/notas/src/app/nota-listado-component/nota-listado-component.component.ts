@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Nota} from '../models/nota';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {NotaService} from '../services/nota.service';
 import {Observable} from 'rxjs/Observable';
 
@@ -10,8 +10,12 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./nota-listado-component.component.css']
 })
 export class NotaListadoComponentComponent implements OnInit {
+  nuevaNotaTitulo = '';
+  nuevaNotaDescripcion = '';
+  idCategoria = '';
+  modalRef: NgbModalRef;
 
-  listadoNotas: Observable<Nota[]>;
+  listadoNotas: Array<Nota> = [];
   constructor(private modalService: NgbModal, private notaService: NotaService) {
   }
 
@@ -24,10 +28,18 @@ export class NotaListadoComponentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listadoNotas = this.notaService.getNotas();
+     this.notaService.getNotas().subscribe(
+      respuesta => this.listadoNotas = respuesta
+    );
   }
 
   abrirModal(modalNuevaNota: any) {
-    this.modalService.open(modalNuevaNota, {size: 'lg'});
+    this.modalRef = this.modalService.open(modalNuevaNota, {size: 'lg'});
+  }
+
+  guardarNota() {
+  this.modalRef.dismiss();
+  this.notaService.addNota(this.nuevaNotaTitulo, this.nuevaNotaDescripcion, Number.parseInt((this.idCategoria))).subscribe(
+    nota => this.listadoNotas.push(nota));
   }
 }

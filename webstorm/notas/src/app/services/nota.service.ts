@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import {Nota} from '../models/nota';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
+const requestOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/x-www-form-urlencoded'
+  })
+};
 
 @Injectable()
 export class NotaService {
-  key = 'sg44wogg0occ0skkkokkwwo040w4ocwco4kg0cwo';
+    key = '8o4w0w0k8o8go48gcocw0kwwwwkoocokkoco8s4w';
   urlNotas = 'http://miguelcamposrivera.com/keeper/api/nota';
   listadoNotas: Array<Nota> = [
     {
@@ -25,6 +30,14 @@ export class NotaService {
   constructor(private http: HttpClient) { }
 
   getNotas(): Observable<Nota[]> {
+
     return this.http.get<Nota[]>(this.urlNotas + '/lista?X-API-KEY=' + this.key);
   }
+
+  addNota (titulo: string, descripcion: string, idcategoria: number): Observable<Nota> {
+    return this.http.post<Nota>(`${this.urlNotas}/nueva`, `titulo=${titulo}&descripcion=${descripcion}&idcategoria=${idcategoria}
+    &X-API-KEY=${this.key}`, requestOptions);
+
+  }
+
 }
