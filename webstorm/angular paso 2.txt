@@ -49,3 +49,7 @@ sg44wogg0occ0skkkokkwwo040w4ocwco4kg0cwo
   urlNotas = 'http://miguelcamposrivera.com/keeper/api/nota';"
 
 14- tambien ponemos el observable en listado-nota-component
+
+
+
+----------------------------------------login----------------------------------------

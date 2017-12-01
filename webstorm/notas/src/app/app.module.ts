@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { NotaComponentComponent } from './nota-component/nota-component.component';
-import { NotaListadoComponentComponent } from './nota-listado-component/nota-listado-component.component';
-import { CategoriaComponent } from './categoria/categoria.component';
-import { CategoriaListadoComponent } from './categoria-listado/categoria-listado.component';
+import { NotaComponentComponent } from './components/nota-component/nota-component.component';
+import { NotaListadoComponentComponent } from './components/nota-listado-component/nota-listado-component.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CategoriaListadoComponent } from './components/categoria-listado/categoria-listado.component';
 import {Route, RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NotaService} from './services/nota.service';

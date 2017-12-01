@@ -30,7 +30,7 @@
       <div class="form-group">
         <label for="nota-categoria" class="col-form-label" >Categoria:</label>
         <select id="nota-categoria" name="categoria" [(ngModel)]="idCategoria" >
-          <option *ngFor='let c of listaCategoria' [ngValue]='c.id'>{{c.id}}</option>
+          <option *ngFor='let c of listaCategoria' [value]='c.id'>{{c.nombre}}</option>
         </select>
       </div>
     </form>

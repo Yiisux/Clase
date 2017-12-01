@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Nota} from '../models/nota';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 const requestOptions = {
   headers: new HttpHeaders({
@@ -10,7 +10,7 @@ const requestOptions = {
 
 @Injectable()
 export class NotaService {
-    key = '8o4w0w0k8o8go48gcocw0kwwwwkoocokkoco8s4w';
+    key = 'sg44wogg0occ0skkkokkwwo040w4ocwco4kg0cwo';
   urlNotas = 'http://miguelcamposrivera.com/keeper/api/nota';
   listadoNotas: Array<Nota> = [
     {
@@ -40,4 +40,10 @@ export class NotaService {
 
   }
 
+  deleteNota (id: number): Observable<any> {
+    return this.http.delete(`${this.urlNotas}/eliminar`,
+      {
+        params: new HttpParams().set('id', `${id}`)
+      });
+  }
 }
