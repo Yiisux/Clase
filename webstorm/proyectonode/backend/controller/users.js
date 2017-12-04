@@ -59,7 +59,7 @@ module.exports.list = (req, res) =>  {
     User
         .find()
         //.select('_id nombre avatar')
-        .select('_id nombre')
+        .select('_id nombre email password campania')
         .exec((err, result) => {
 
             if (err)
