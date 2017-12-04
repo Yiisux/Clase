@@ -28,10 +28,7 @@ module.exports.signUp = (req, res) => {
 
 module.exports.signIn = (req, res) => {
 
-    User
-        .findOne({email: req.body.email})
-        .select('_id email +password ')
-        .exec((err, user) => {
+    User.findOne({email: req.body.email}).select('_id email +password ').exec((err, user) => {
 
             if (err) return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
             if (!user) return res.status(404).jsonp({error: 404, mensaje: 'No existe el usuario'});

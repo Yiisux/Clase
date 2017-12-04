@@ -1,4 +1,4 @@
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let campaniaSchema = new Schema({
@@ -7,7 +7,7 @@ let campaniaSchema = new Schema({
     clave: String,
     aportacion: [{type: Schema.ObjectId, ref: 'Aportacion'}],
     categoria: [{type: Schema.ObjectId, ref: 'Categoria'}],
-    usuario: [{type: Schema.ObjectId, ref: 'Usuario'}]
+    usuarios: [{type: Schema.ObjectId, ref: 'Usuario'}]
 });
 
 
