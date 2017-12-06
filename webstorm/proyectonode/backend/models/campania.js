@@ -7,7 +7,6 @@ let campaniaSchema = new Schema({
     clave: String,
     aportacion: [{type: Schema.ObjectId, ref: 'Aportacion'}],
     categoria: [{type: Schema.ObjectId, ref: 'Categoria'}],
-    usuarios: [{type: Schema.ObjectId, ref: 'Usuario'}]
 });
 
 

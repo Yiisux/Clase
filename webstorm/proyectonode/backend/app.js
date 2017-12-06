@@ -6,8 +6,9 @@ const logger = require("morgan");
 const mongoose = require('mongoose');
 const auth = require('./middlewares/auth');
 const config = require('./config');
+const cors = require('cors');
 
-mongoose.connect('mongodb://192.168.99.100:27017/apimongo',  { useMongoClient: true });
+mongoose.connect('mongodb://admin:admin@ds131546.mlab.com:31546/apicampanias',  { useMongoClient: true });
 
 mongoose.Promise = global.Promise;
 
@@ -18,6 +19,7 @@ let app = express();
 
 
 app.use(logger("dev"));
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
