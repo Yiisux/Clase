@@ -8,7 +8,7 @@ const auth = require('./middlewares/auth');
 const config = require('./config');
 const cors = require('cors');
 
-mongoose.connect('mongodb://admin:admin@ds131546.mlab.com:31546/apicampanias',  { useMongoClient: true });
+mongoose.connect(config.url,  { useMongoClient: true });
 
 mongoose.Promise = global.Promise;
 
@@ -26,6 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/users', users);
-app.use('/campaign', campanias);
+app.use('/campaign', auth.isAuth, campanias);
 
 module.exports = app;

@@ -5,12 +5,7 @@ let campaniaSchema = new Schema({
     nombre: String,
     causa: String,
     clave: String,
-    aportacion: [{type: Schema.ObjectId, ref: 'Aportacion'}],
     categoria: [{type: Schema.ObjectId, ref: 'Categoria'}],
 });
-
-
-
-
 
 module.exports = mongoose.model('Campania', campaniaSchema);

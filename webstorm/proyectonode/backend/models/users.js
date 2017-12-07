@@ -11,7 +11,6 @@ let usersSchema = new Schema({
     grupo: String,
     signupDate: { type: Date, default: Date.now()},
     lastLogin: Date,
-    aportacion: [{type: Schema.ObjectId, ref: 'Aportacion'}],
     campania: [{type: Schema.ObjectId, ref: 'Campania'}],
 });
 
